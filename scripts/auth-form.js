@@ -1,9 +1,13 @@
 document.querySelector('.js-form')
-  .addEventListener('submit', (event) => {
-    event.preventDefault();
+  .addEventListener('submit', handleLoginSubmit);
 
-    const email = document.querySelector('.js-email').value;
-    const password = document.querySelector('.js-password').value;
+function handleLoginSubmit(event) {
+  event.preventDefault();
 
-    console.log(email, password);
-  });
+  const formData = new FormData(event.target);
+
+  const email = formData.get('email');
+  const password = formData.get('password');
+
+  console.log(email, password);
+}
