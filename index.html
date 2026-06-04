@@ -5,22 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="styles/tabs.css">
 </head>
 <body>
-  <form class="form js-form">
-    <fieldset>
-      <legend>Authorization form</legend>
+  <div class="tabs">
+    <div role="tablist" aria-label="Select authentication method">
+      <button
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-1"
+        id="tab-1"
+        tabindex="0">
+        Sign in
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-2"
+        id="tab-2"
+        tabindex="-1">
+        Sign up
+      </button>
+    </div>
+    <div class="tab-panels">
+      <div
+        role="tabpanel"
+        id="panel-1"
+        tabindex="0"
+        aria-labelledby="tab-1">
+        <form class="js-auth-form">
+          <fieldset>
+            <legend>Authorization form</legend>
 
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email">
+            <label for="email-auth">Email:</label>
+            <input type="email" name="email" id="email-auth">
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password">
+            <label for="password-auth">Password:</label>
+            <input type="password" name="password" id="password-auth">
 
-      <button type="submit" class="js-submit">Submit</button>
-    </fieldset>
-  </form>
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+      <div
+        role="tabpanel"
+        id="panel-2"
+        tabindex="0"
+        aria-labelledby="tab-2"
+        hidden>
+        <form class="js-register-form">
+          <fieldset>
+            <legend>Registration form</legend>
 
-<script src="scripts/auth-form.js"></script>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+
+            <label for="email-reg">Email:</label>
+            <input type="text" name="email" id="email-reg">
+
+            <label for="phone">Phone number:</label>
+            <input type="text" name="phone" id="phone">
+
+            <label for="password-reg">Password:</label>
+            <input type="password" name="password" id="password-reg">
+
+            <label for="password-confirm">Password confirmation:</label>
+            <input type="password" name="password-confirm" id="password-confirm">
+
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">I agree to the processing of my personal data</label>
+
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script src="scripts/forms.js"></script>
+<script src="scripts/authentication-tabs.js"></script>
 </body>
 </html>
