@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="styles/tabs.css">
+  <link rel="stylesheet" href="styles/forms.css">
 </head>
 <body>
   <div class="tabs">
@@ -33,15 +34,19 @@
         id="panel-1"
         tabindex="0"
         aria-labelledby="tab-1">
-        <form class="js-auth-form">
+        <form class="form js-auth-form">
           <fieldset>
             <legend>Authorization form</legend>
 
-            <label for="email-auth">Email:</label>
-            <input type="email" name="email" id="email-auth">
+            <p>
+              <label for="email-auth">Email:</label>
+              <input type="email" name="email" id="email-auth" required>
+            </p>
 
-            <label for="password-auth">Password:</label>
-            <input type="password" name="password" id="password-auth">
+            <p>
+              <label for="password-auth">Password:</label>
+              <input type="password" name="password" id="password-auth" required>
+            </p>
 
             <button type="submit">Submit</button>
           </fieldset>
@@ -53,27 +58,39 @@
         tabindex="0"
         aria-labelledby="tab-2"
         hidden>
-        <form class="js-register-form">
+        <form class="form js-register-form">
           <fieldset>
             <legend>Registration form</legend>
 
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required>
+            </p>
 
-            <label for="email-reg">Email:</label>
-            <input type="text" name="email" id="email-reg">
+            <p>
+              <label for="email-reg">Email:</label>
+              <input type="email" name="email" id="email-reg" required>
+            </p>
 
-            <label for="phone">Phone number:</label>
-            <input type="text" name="phone" id="phone">
+            <p>
+              <label for="phone">Phone number:</label>
+              <input type="tel" name="phone" id="phone" required>
+            </p>
 
-            <label for="password-reg">Password:</label>
-            <input type="password" name="password" id="password-reg">
+            <p>
+              <label for="password-reg">Password:</label>
+              <input type="password" name="password" class="password-input" id="password-reg" minlength="6" maxlength="14" required>
+            </p>
 
-            <label for="password-confirm">Password confirmation:</label>
-            <input type="password" name="password-confirm" id="password-confirm">
+            <p>
+              <label for="password-confirm">Password confirmation:</label>
+              <input type="password" name="password-confirm" class="password-confirm" id="password-confirm" required>
+            </p>
 
-            <input type="checkbox" name="checkbox" id="checkbox">
-            <label for="checkbox">I agree to the processing of my personal data</label>
+            <p>
+              <input type="checkbox" name="checkbox" id="checkbox" required>
+              <label for="checkbox">I agree to the processing of my personal data *</label>
+            </p>
 
             <button type="submit">Submit</button>
           </fieldset>
