@@ -3,15 +3,23 @@ const registerForm = document.querySelector('.js-register-form');
 const passwordInput = document.querySelector('.password-input');
 const passwordConfirm = document.querySelector('.password-confirm');
 
-passwordInput.addEventListener('input', validatePasswords);
-passwordConfirm.addEventListener('input', validatePasswords);
+passwordInput.addEventListener('input', clearValidationError);
+passwordConfirm.addEventListener('input', clearValidationError);
 
-function doPasswordsMatch(password, passwordConfirm) {
+function clearValidationError(event) {
+  const input = event.currentTarget;
+
+  if (!input.validity.valid) {
+    input.setCustomValidity('');
+  }
+}
+
+function isPasswordMatch(password, passwordConfirm) {
   return password === passwordConfirm;
 }
 
 function validatePasswords() {
-  if (!doPasswordsMatch(passwordInput.value, passwordConfirm.value)) {
+  if (!isPasswordMatch(passwordInput.value, passwordConfirm.value)) {
     passwordConfirm.setCustomValidity('Passwords do not match');
   } else {
     passwordConfirm.setCustomValidity('');
